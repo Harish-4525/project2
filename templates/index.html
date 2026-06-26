@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing Email Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Phishing Email Detection</h2>
+    <form action="/predict" method="post">
+        <textarea name="email_text" placeholder="Paste email content here..."></textarea><br>
+        <button type="submit">Classify</button>
+    </form>
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
